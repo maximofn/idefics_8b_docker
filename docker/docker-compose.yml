@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  idefics_8b:
+    container_name: idefics_8b
+    image: registry.hf.space/huggingfacem4-idefics-8b:latest
+    platform: linux/amd64
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./hub:/home/user/.cache/huggingface/hub/
+    command: python app.py
+
+# version: "3.8"
+
+# services:
+#     image: registry.hf.space/huggingfacem4-idefics-8b:latest
+#     platform: linux/amd64
+#     build: .
+#     runtime: nvidia
+#     network_mode: "host"
+#     tty: true
+#     stdin_open: true
