@@ -11,20 +11,6 @@ Dockerization of the [Hugging Face Idefics 8B Space](https://huggingface.co/spac
 
 ## Usage
 
-### Download the image from the Docker Hub
-
-You can download the image and run it
-
 ```bash
-docker pull maximofn/idefics_8b:latest
-./run_app.sh
-```
-
-### Build the image
-
-Or you can build the image and run it
-
-```bash
-./build_docker_image.sh
 ./run_app.sh
 ```
